@@ -1,27 +1,35 @@
 {
   "name": "@aparsoft/chatbot-react",
   "version": "1.0.0",
-  "description": "React component for the Aparsoft AI Chatbot Widget",
+  "description": "React component for the Aparsoft AI Chatbot Widget -- embeddable, customizable, SSR-safe.",
   "main": "src/index.js",
-  "module": "src/index.js",
+  "module": "src/index.tsx",
+  "types": "src/index.tsx",
   "exports": {
     ".": {
-      "import": "./src/index.js",
+      "import": "./src/index.tsx",
       "require": "./src/index.js",
+      "types": "./src/index.tsx",
       "default": "./src/index.js"
     }
   },
+  "files": [
+    "src",
+    "README.md"
+  ],
+  "sideEffects": false,
   "keywords": [
+    "aparsoft",
     "chatbot",
     "ai-chatbot",
-    "react",
     "react-chatbot",
-    "widget",
-    "aparsoft",
-    "rag",
-    "ai"
+    "chat-widget",
+    "embeddable-chatbot",
+    "rag-chatbot",
+    "customer-support",
+    "live-chat"
   ],
-  "author": "Aparsoft Private Limited",
+  "author": "Aparsoft Private Limited <hello@aparsoft.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -34,7 +42,6 @@
     "react-dom": ">=17.0.0"
   },
   "peerDependenciesMeta": {
-    "react": { "optional": false },
-    "react-dom": { "optional": false }
+    "react-dom": { "optional": true }
   }
 }
