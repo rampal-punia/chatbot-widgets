@@ -1,0 +1,40 @@
+{
+  "name": "@aparsoft/chatbot-vue",
+  "version": "1.0.0",
+  "description": "Vue component for the Aparsoft AI Chatbot Widget (Vue 2.7+ and Vue 3)",
+  "main": "src/AparsoftChatbot.vue",
+  "module": "src/AparsoftChatbot.vue",
+  "exports": {
+    ".": {
+      "import": "./src/AparsoftChatbot.vue",
+      "require": "./src/AparsoftChatbot.vue",
+      "default": "./src/AparsoftChatbot.vue"
+    }
+  },
+  "keywords": [
+    "chatbot",
+    "ai-chatbot",
+    "vue",
+    "vue3",
+    "vue2",
+    "vue-chatbot",
+    "widget",
+    "aparsoft",
+    "rag",
+    "ai"
+  ],
+  "author": "Aparsoft Private Limited",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aparsoft/chatbot-widgets.git",
+    "directory": "packages/vue"
+  },
+  "homepage": "https://chatbot.aparsoft.com",
+  "peerDependencies": {
+    "vue": ">=2.7.0 || >=3.0.0"
+  },
+  "peerDependenciesMeta": {
+    "vue": { "optional": false }
+  }
+}
