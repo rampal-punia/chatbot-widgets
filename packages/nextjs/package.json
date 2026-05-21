@@ -1,7 +1,7 @@
 {
   "name": "@aparsoft/chatbot-nextjs",
   "version": "1.0.0",
-  "description": "Next.js component for the Aparsoft AI Chatbot Widget (App Router, TypeScript)",
+  "description": "Next.js component for the Aparsoft AI Chatbot Widget -- App Router, Pages Router, TypeScript, SSR-safe.",
   "main": "src/index.tsx",
   "module": "src/index.tsx",
   "types": "src/index.tsx",
@@ -13,18 +13,27 @@
       "default": "./src/index.tsx"
     }
   },
+  "files": [
+    "src/index.tsx",
+    "README.md"
+  ],
+  "sideEffects": false,
   "keywords": [
+    "aparsoft",
     "chatbot",
     "ai-chatbot",
-    "nextjs",
-    "next.js",
     "nextjs-chatbot",
-    "widget",
-    "aparsoft",
-    "rag",
-    "ai"
+    "nextjs-chat-widget",
+    "nextjs-component",
+    "app-router",
+    "chat-widget",
+    "embeddable-chatbot",
+    "rag-chatbot",
+    "llm-chatbot",
+    "customer-support",
+    "live-chat"
   ],
-  "author": "Aparsoft Private Limited",
+  "author": "Aparsoft Private Limited <hello@aparsoft.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -35,9 +44,5 @@
   "peerDependencies": {
     "react": ">=18.0.0",
     "next": ">=13.0.0"
-  },
-  "peerDependenciesMeta": {
-    "react": { "optional": false },
-    "next": { "optional": false }
   }
 }
