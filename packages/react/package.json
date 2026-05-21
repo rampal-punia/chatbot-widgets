@@ -1,0 +1,40 @@
+{
+  "name": "@aparsoft/chatbot-react",
+  "version": "1.0.0",
+  "description": "React component for the Aparsoft AI Chatbot Widget",
+  "main": "src/index.js",
+  "module": "src/index.js",
+  "exports": {
+    ".": {
+      "import": "./src/index.js",
+      "require": "./src/index.js",
+      "default": "./src/index.js"
+    }
+  },
+  "keywords": [
+    "chatbot",
+    "ai-chatbot",
+    "react",
+    "react-chatbot",
+    "widget",
+    "aparsoft",
+    "rag",
+    "ai"
+  ],
+  "author": "Aparsoft Private Limited",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aparsoft/chatbot-widgets.git",
+    "directory": "packages/react"
+  },
+  "homepage": "https://chatbot.aparsoft.com",
+  "peerDependencies": {
+    "react": ">=17.0.0",
+    "react-dom": ">=17.0.0"
+  },
+  "peerDependenciesMeta": {
+    "react": { "optional": false },
+    "react-dom": { "optional": false }
+  }
+}
