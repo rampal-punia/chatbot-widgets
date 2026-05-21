@@ -51,6 +51,7 @@ jobs:
             const fs = require('fs');
             const files = [
               'packages/react/src/index.js',
+              'packages/react/src/index.tsx',
               'packages/nextjs/src/index.tsx',
               'packages/vue/src/AparsoftChatbot.vue',
               'packages/angular/src/aparsoft-chatbot.component.ts',
@@ -72,9 +73,19 @@ jobs:
       - name: Verify directory structure
         run: |
           ls packages/react/src/index.js
+          ls packages/react/src/index.tsx
           ls packages/nextjs/src/index.tsx
           ls packages/vue/src/AparsoftChatbot.vue
           ls packages/angular/src/aparsoft-chatbot.component.ts
           ls examples/vanilla-html/index.html
+          ls docs/getting-started.md
+          ls docs/configuration.md
+          ls docs/theming.md
+          ls docs/ssr-guide.md
+          ls docs/api-reference.md
+          ls docs/wordpress-guide.md
+          ls wordpress/aparsoft-chatbot.php
+          ls wordpress/readme.txt
+          ls CODE_OF_CONDUCT.md
           ls README.md
           ls LICENSE
