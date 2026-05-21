@@ -11,8 +11,8 @@
   "type": "module",
   "scripts": {
     "build": "echo \"No build step required -- packages are thin wrappers.\"",
-    "test": "node -e \"['react','nextjs','vue','angular'].forEach(p => { const pkg = require('./packages/' + p + '/package.json'); console.log(pkg.name, pkg.version); })\"",
-    "test:unit": "vitest run",
+    "test": "./node_modules/.bin/vitest run",
+    "test:watch": "./node_modules/.bin/vitest",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "format": "prettier --write \"packages/**/*.{js,jsx,ts,tsx,vue}\""
