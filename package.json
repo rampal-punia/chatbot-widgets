@@ -1,0 +1,23 @@
+{
+  "name": "chatbot-widgets",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Aparsoft AI Chatbot Widget -- framework wrappers for React, Next.js, Vue, and Angular",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aparsoft/chatbot-widgets.git"
+  },
+  "license": "MIT",
+  "scripts": {
+    "build": "echo \"No build step required -- packages are thin wrappers.\"",
+    "test": "node -e \"['react','nextjs','vue','angular'].forEach(p => { const pkg = require('./packages/' + p + '/package.json'); console.log(pkg.name, pkg.version); })\"",
+    "lint": "echo \"No linter configured yet.\""
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "engines": {
+    "node": ">=16",
+    "pnpm": ">=8"
+  }
+}
