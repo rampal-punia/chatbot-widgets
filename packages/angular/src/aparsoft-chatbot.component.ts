@@ -37,12 +37,6 @@ export interface AparsoftChatbotInstance {
   destroy?: () => void;
 }
 
-declare global {
-  interface Window {
-    AparsoftChatbot: AparsoftChatbotInstance | null | undefined;
-  }
-}
-
 const WIDGET_SCRIPT_URL = 'https://www.aparsoft.com/static/chatbot-widget/widget.loader.js';
 const READY_EVENT = 'aparsoft-chatbot:ready';
 const DEFAULT_CONFIG_ENDPOINT =
@@ -145,12 +139,6 @@ export class AparsoftChatbotComponent implements OnInit, OnDestroy {
     if (config.welcomeMessage) this.loaderScript.dataset.welcomeMessage = config.welcomeMessage;
     if (config.title) this.loaderScript.dataset.title = config.title;
     document.body.appendChild(this.loaderScript);
-
-    if (window.AparsoftChatbot?.isReady) {
-      this.handleReady(
-        new CustomEvent(READY_EVENT, { detail: { controller: window.AparsoftChatbot } }),
-      );
-    }
   }
 
   private destroyWidget(): void {
