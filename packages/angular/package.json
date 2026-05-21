@@ -1,7 +1,7 @@
 {
   "name": "@aparsoft/chatbot-angular",
   "version": "1.0.0",
-  "description": "Angular standalone component for the Aparsoft AI Chatbot Widget",
+  "description": "Angular standalone component for the Aparsoft AI Chatbot Widget -- SSR-safe, Angular 14+.",
   "main": "src/aparsoft-chatbot.component.ts",
   "module": "src/aparsoft-chatbot.component.ts",
   "types": "src/aparsoft-chatbot.component.ts",
@@ -13,18 +13,26 @@
       "default": "./src/aparsoft-chatbot.component.ts"
     }
   },
+  "files": [
+    "src/aparsoft-chatbot.component.ts",
+    "README.md"
+  ],
+  "sideEffects": false,
   "keywords": [
+    "aparsoft",
     "chatbot",
     "ai-chatbot",
-    "angular",
     "angular-chatbot",
-    "widget",
-    "aparsoft",
-    "rag",
-    "ai",
-    "ng"
+    "angular-chat-widget",
+    "angular-component",
+    "chat-widget",
+    "embeddable-chatbot",
+    "rag-chatbot",
+    "llm-chatbot",
+    "customer-support",
+    "live-chat"
   ],
-  "author": "Aparsoft Private Limited",
+  "author": "Aparsoft Private Limited <hello@aparsoft.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -34,8 +42,5 @@
   "homepage": "https://chatbot.aparsoft.com",
   "peerDependencies": {
     "@angular/core": ">=14.0.0"
-  },
-  "peerDependenciesMeta": {
-    "@angular/core": { "optional": false }
   }
 }
