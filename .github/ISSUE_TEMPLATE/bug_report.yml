@@ -1,0 +1,67 @@
+name: Bug Report
+description: Report a bug in an Aparsoft chatbot widget package
+labels: ["bug"]
+body:
+  - type: dropdown
+    id: package
+    attributes:
+      label: Package
+      description: Which package is affected?
+      options:
+        - "@aparsoft/chatbot-react"
+        - "@aparsoft/chatbot-nextjs"
+        - "@aparsoft/chatbot-vue"
+        - "@aparsoft/chatbot-angular"
+        - "WordPress plugin"
+        - "Vanilla HTML / widget.loader.js"
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Package version
+      description: What version of the package are you using?
+      placeholder: "1.0.0"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What happened? What did you expect to happen?
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: How can we reproduce this issue?
+      placeholder: |
+        1. Install package...
+        2. Add component...
+        3. Open browser...
+    validations:
+      required: true
+
+  - type: textarea
+    id: code
+    attributes:
+      label: Code snippet
+      description: |
+        A minimal code example that reproduces the issue.
+      render: jsx
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: |
+        Browser, framework version, Node version, etc.
+      value: |
+        - OS:
+        - Browser:
+        - Framework (React/Vue/Angular) version:
+        - Node version:
