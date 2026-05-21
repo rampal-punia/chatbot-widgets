@@ -34,7 +34,9 @@ describe('AparsoftChatbotComponent (Angular)', () => {
 
     component.ngOnInit();
 
-    const script = document.querySelector(`script[src="${WIDGET_SCRIPT_URL}"]`) as HTMLScriptElement;
+    const script = document.querySelector(
+      `script[src="${WIDGET_SCRIPT_URL}"]`,
+    ) as HTMLScriptElement;
     expect(script?.dataset.aparsoftChatbot).toBe('true');
     expect(script?.dataset.apiKey).toBe('my-api-key');
     expect(script?.dataset.position).toBe('bottom-left');
