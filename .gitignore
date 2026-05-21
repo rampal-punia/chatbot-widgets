@@ -1,197 +1,32 @@
-# /home/ram/aparsoft/.gitignore
-
-# Docker
-.docker/
-**/Dockerfile
-*.env
-docker-compose.override.yml
-docker-compose.override.yaml
-.docker-compose.override.yml
-.docker-compose.override.yaml
-docker-compose.dev.yml
-docker-compose.yml
-# docker-compose.prod.yml
-docker-compose.staging.yml
-docker-sync.yml
-docker/data/*
-!docker/data/.gitkeep
-docker/logs/*
-!docker/logs/.gitkeep
-docker-compose.debug.yml
-
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-*.egg
-*.egg-info/
-dist/
-build/
-eggs/
-parts/
-bin/
-var/
-sdist/
-develop-eggs/
-.installed.cfg
-.Python
-*.manifest
-*.spec
-MANIFEST
-
-# Virtual Environment
-.env
-.env.prod
-.env.dev
-.venv
-env/
-venv/
-finvenv/
-ENV/
-env.bak/
-venv.bak/
-*.env
-
-# Django
-*.log
-local_settings.py
-db.sqlite3
-db.sqlite3-journal
-media/
-staticfiles/
-# Ignore static files except chatbot widgets
-backend/static/*
-!backend/static/chatbot-widget/
-
-# Node.js
+# Dependencies
 node_modules/
-npm-debug.log
-yarn-debug.log
-yarn-error.log
-.next/
-out/
 
-# Development Tools
+# Build output
+dist/
+
+# IDE
 .idea/
 .vscode/
 *.swp
 *.swo
 .DS_Store
 
-# Testing and Coverage
-.coverage
-.coverage.*
-.tox/
-.nox/
-htmlcov/
-.pytest_cache/
-nosetests.xml
-coverage.xml
-*.cover
-.hypothesis/
+# OS
+Thumbs.db
 
-# Documentation
-docs/_build/
-site/
+# Logs
+npm-debug.log
+yarn-debug.log
+yarn-error.log
 
-# Type Checking
-.mypy_cache/
-.dmypy.json
-dmypy.json
-.pyre/
-.pytype/
+# Environment
+.env
+.env.local
+.env.*.local
 
-# Jupyter
-.ipynb_checkpoints
-_*.ipynb
-ipython_config.py
-profile_default/
+# Testing
+coverage/
 
-# Model & Data files
-*.pt
-*.pth
-*.bin
-*.safetensors
-*.csv
-*.joblib
-*.dill
-
-# Images
-*/*.jpg
-# */*.png
-
-# Project Specific
-local_folder/**/*
+# Internal (not for public repo)
 local_folder/
-!.vscode/settings.json
-**/*/docs/
-**/*/social/*
-project_utils/
-*/*/local/
-script.*
-_*.py
-!__init__.py
-_*.md
-**/logs/
-**/results/
-**/wandb/
-_error.md
-tests/
-*.ini
-
-# Frontend Specific
-frontend/node_modules
-frontend/dist
-frontend/.env.local
-
-# SSL/TLS
-postgres/config/ssl/*
-!postgres/config/ssl/.gitkeep
-nginx/certbot/conf/*
-!nginx/certbot/conf/.gitkeep
-*/nginx.dev.conf
-
-# Dependency Management
-#Pipfile.lock
-#poetry.lock
-#pdm.lock
-.pdm.toml
-__pypackages__/
-
-# Task Runners
-celerybeat-schedule
-celerybeat.pid
-
-# Other
-*.sage.py
-cython_debug/
-.scrapy
-.webassets-cache
-.spyderproject
-.spyproject
-.ropeproject
-
-# Volume mounts & temporary files
-tmp/
-temp/
-.tmp/
-volumes/
-# data/
-!data/.gitkeep
-pg_data/
-redis_data/
-elasticsearch_data/
-mongo_data/
-**models_summary.md
-**/backups
-for-reference-from-aparsoft/
 auto_commit.py
-
-collection_info/
-.checkpoints/
-.agents/
-*.ckpt
-*.ckpt.*
-docs/
-knowledge_base/
