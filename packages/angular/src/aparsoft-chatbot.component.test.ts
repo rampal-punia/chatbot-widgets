@@ -1,23 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 
-// Mock Angular decorators and platform check
-vi.mock('@angular/core', () => ({
-  Component: (_opts: any) => (_cls: any) => {},
-  EventEmitter: class {
-    handlers: Array<(val: any) => void> = [];
-    emit(val: any) { this.handlers.forEach((h) => h(val)); }
-    subscribe(handler: (val: any) => void) { this.handlers.push(handler); }
-  },
-  Inject: (_token: any) => (_target: any, _key: string, _index: number) => {},
-  Input: () => (_target: any, _key: string) => {},
-  Output: () => (_target: any, _key: string) => {},
-  PLATFORM_ID: 'platformId',
-}));
-
-vi.mock('@angular/common', () => ({
-  isPlatformBrowser: () => true,
-}));
-
 import { AparsoftChatbotComponent } from './aparsoft-chatbot.component';
 
 const WIDGET_SCRIPT_URL = 'https://www.aparsoft.com/static/chatbot-widget/widget.loader.js';
