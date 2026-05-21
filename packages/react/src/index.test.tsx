@@ -24,7 +24,7 @@ describe('AparsoftChatbot (React TSX)', () => {
   it('injects the widget loader script into the DOM', () => {
     render(React.createElement(AparsoftChatbotTSX, { apiKey: 'test-key' }));
 
-    const script = document.querySelector(`script[src="${WIDGET_SCRIPT_URL}"]`);
+    const script = document.querySelector(`script[src="${WIDGET_SCRIPT_URL}"]`) as HTMLScriptElement | null;
     expect(script).not.toBeNull();
     expect(script?.async).toBe(true);
   });
