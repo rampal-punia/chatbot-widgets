@@ -37,19 +37,19 @@ declare global {
 
 const WIDGET_SCRIPT_URL = 'https://www.aparsoft.com/static/chatbot-widget/widget.loader.js';
 const READY_EVENT = 'aparsoft-chatbot:ready';
-const DEFAULT_CONFIG_ENDPOINT = 'https://www.aparsoft.com/api/v1/chatbot/public/widget/{apiKey}/config/';
+const DEFAULT_CONFIG_ENDPOINT =
+  'https://www.aparsoft.com/api/v1/chatbot/public/widget/{apiKey}/config/';
 const DEFAULT_WEBSOCKET_URL = 'wss://www.aparsoft.com/ws/client-chatbot/';
 
-function applyLoaderDataset(
-  script: HTMLScriptElement,
-  config: AparsoftChatbotConfig,
-): void {
+function applyLoaderDataset(script: HTMLScriptElement, config: AparsoftChatbotConfig): void {
   script.dataset.aparsoftChatbot = 'true';
   script.dataset.apiKey = config.apiKey;
 
   if (config.position) script.dataset.position = config.position;
-  if (typeof config.showBranding === 'boolean') script.dataset.showBranding = String(config.showBranding);
-  if (config.autoOpenDelayMs && config.autoOpenDelayMs > 0) script.dataset.autoOpenDelayMs = String(config.autoOpenDelayMs);
+  if (typeof config.showBranding === 'boolean')
+    script.dataset.showBranding = String(config.showBranding);
+  if (config.autoOpenDelayMs && config.autoOpenDelayMs > 0)
+    script.dataset.autoOpenDelayMs = String(config.autoOpenDelayMs);
   if (config.configEndpoint) script.dataset.configEndpoint = config.configEndpoint;
   if (config.websocketUrl) script.dataset.websocketUrl = config.websocketUrl;
   if (config.primaryColor) script.dataset.primaryColor = config.primaryColor;
@@ -112,7 +112,8 @@ export default function AparsoftChatbot({
     };
 
     const handleReady = (event: Event) => {
-      const controller = (event as CustomEvent).detail?.controller || window.AparsoftChatbot || null;
+      const controller =
+        (event as CustomEvent).detail?.controller || window.AparsoftChatbot || null;
       if (controller && onReady) {
         onReady(controller);
       }
@@ -121,7 +122,7 @@ export default function AparsoftChatbot({
     window.addEventListener(READY_EVENT, handleReady as EventListener);
 
     const existingScript = document.querySelector(
-      'script[src="' + WIDGET_SCRIPT_URL + '"][data-aparsoft-chatbot]'
+      'script[src="' + WIDGET_SCRIPT_URL + '"][data-aparsoft-chatbot]',
     ) as HTMLScriptElement | null;
     if (existingScript) {
       existingScript.remove();
@@ -146,7 +147,21 @@ export default function AparsoftChatbot({
       window.AparsoftChatbot?.destroy?.();
       window.AparsoftChatbot = null;
     };
-  }, [apiKey, position, showBranding, autoOpenDelay, configEndpoint, websocketUrl, primaryColor, secondaryColor, widgetTitle, widgetSubtitle, welcomeMessage, title, onReady]);
+  }, [
+    apiKey,
+    position,
+    showBranding,
+    autoOpenDelay,
+    configEndpoint,
+    websocketUrl,
+    primaryColor,
+    secondaryColor,
+    widgetTitle,
+    widgetSubtitle,
+    welcomeMessage,
+    title,
+    onReady,
+  ]);
 
   return null;
 }
