@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { render, act } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import React from 'react';
 
 // Import the TSX version
@@ -24,7 +24,9 @@ describe('AparsoftChatbot (React TSX)', () => {
   it('injects the widget loader script into the DOM', () => {
     render(React.createElement(AparsoftChatbotTSX, { apiKey: 'test-key' }));
 
-    const script = document.querySelector(`script[src="${WIDGET_SCRIPT_URL}"]`) as HTMLScriptElement | null;
+    const script = document.querySelector(
+      `script[src="${WIDGET_SCRIPT_URL}"]`,
+    ) as HTMLScriptElement | null;
     expect(script).not.toBeNull();
     expect(script?.async).toBe(true);
   });
