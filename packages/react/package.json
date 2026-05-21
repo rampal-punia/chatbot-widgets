@@ -14,7 +14,8 @@
     }
   },
   "files": [
-    "src",
+    "src/index.js",
+    "src/index.tsx",
     "README.md"
   ],
   "sideEffects": false,
@@ -23,11 +24,15 @@
     "chatbot",
     "ai-chatbot",
     "react-chatbot",
+    "react-chat-widget",
+    "react-component",
     "chat-widget",
     "embeddable-chatbot",
     "rag-chatbot",
+    "llm-chatbot",
     "customer-support",
-    "live-chat"
+    "live-chat",
+    "website-chatbot"
   ],
   "author": "Aparsoft Private Limited <hello@aparsoft.com>",
   "license": "MIT",
