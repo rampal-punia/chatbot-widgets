@@ -1,0 +1,41 @@
+{
+  "name": "@aparsoft/chatbot-angular",
+  "version": "1.0.0",
+  "description": "Angular standalone component for the Aparsoft AI Chatbot Widget",
+  "main": "src/aparsoft-chatbot.component.ts",
+  "module": "src/aparsoft-chatbot.component.ts",
+  "types": "src/aparsoft-chatbot.component.ts",
+  "exports": {
+    ".": {
+      "types": "./src/aparsoft-chatbot.component.ts",
+      "import": "./src/aparsoft-chatbot.component.ts",
+      "require": "./src/aparsoft-chatbot.component.ts",
+      "default": "./src/aparsoft-chatbot.component.ts"
+    }
+  },
+  "keywords": [
+    "chatbot",
+    "ai-chatbot",
+    "angular",
+    "angular-chatbot",
+    "widget",
+    "aparsoft",
+    "rag",
+    "ai",
+    "ng"
+  ],
+  "author": "Aparsoft Private Limited",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aparsoft/chatbot-widgets.git",
+    "directory": "packages/angular"
+  },
+  "homepage": "https://chatbot.aparsoft.com",
+  "peerDependencies": {
+    "@angular/core": ">=14.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@angular/core": { "optional": false }
+  }
+}
