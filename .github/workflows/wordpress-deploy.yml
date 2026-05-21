@@ -1,0 +1,21 @@
+name: Package WordPress Plugin
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  package-wordpress:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Package WordPress plugin as .zip
+        run: |
+          cd wordpress
+          zip -r ../aparsoft-chatbot.zip .
+
+      - name: Upload .zip to GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: aparsoft-chatbot.zip
