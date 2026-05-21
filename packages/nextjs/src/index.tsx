@@ -29,12 +29,6 @@ export interface AparsoftChatbotInstance {
   destroy?: () => void;
 }
 
-declare global {
-  interface Window {
-    AparsoftChatbot: AparsoftChatbotInstance | null | undefined;
-  }
-}
-
 const WIDGET_SCRIPT_URL = 'https://www.aparsoft.com/static/chatbot-widget/widget.loader.js';
 const READY_EVENT = 'aparsoft-chatbot:ready';
 const DEFAULT_CONFIG_ENDPOINT =
@@ -136,10 +130,6 @@ export default function AparsoftChatbot({
     script.async = true;
     applyLoaderDataset(script, config);
     document.body.appendChild(script);
-
-    if (window.AparsoftChatbot?.isReady) {
-      handleReady(new CustomEvent(READY_EVENT, { detail: { controller: window.AparsoftChatbot } }));
-    }
 
     return () => {
       window.removeEventListener(READY_EVENT, handleReady as EventListener);
