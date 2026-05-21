@@ -1,11 +1,12 @@
 <template>
-  <span aria-hidden="true" style="display: none;"></span>
+  <span aria-hidden="true" style="display: none"></span>
 </template>
 
 <script>
 const WIDGET_SCRIPT_URL = 'https://www.aparsoft.com/static/chatbot-widget/widget.loader.js';
 const READY_EVENT = 'aparsoft-chatbot:ready';
-const DEFAULT_CONFIG_ENDPOINT = 'https://www.aparsoft.com/api/v1/chatbot/public/widget/{apiKey}/config/';
+const DEFAULT_CONFIG_ENDPOINT =
+  'https://www.aparsoft.com/api/v1/chatbot/public/widget/{apiKey}/config/';
 const DEFAULT_WEBSOCKET_URL = 'wss://www.aparsoft.com/ws/client-chatbot/';
 
 function applyLoaderDataset(script, config) {
@@ -13,7 +14,8 @@ function applyLoaderDataset(script, config) {
   script.dataset.apiKey = config.apiKey;
 
   if (config.position) script.dataset.position = config.position;
-  if (typeof config.showBranding === 'boolean') script.dataset.showBranding = String(config.showBranding);
+  if (typeof config.showBranding === 'boolean')
+    script.dataset.showBranding = String(config.showBranding);
   if (config.autoOpenDelayMs > 0) script.dataset.autoOpenDelayMs = String(config.autoOpenDelayMs);
   if (config.configEndpoint) script.dataset.configEndpoint = config.configEndpoint;
   if (config.websocketUrl) script.dataset.websocketUrl = config.websocketUrl;
@@ -31,58 +33,58 @@ export default {
   props: {
     apiKey: {
       type: String,
-      required: true
+      required: true,
     },
     position: {
       type: String,
-      default: 'bottom-right'
+      default: 'bottom-right',
     },
     showBranding: {
       type: Boolean,
-      default: true
+      default: true,
     },
     autoOpenDelay: {
       type: Number,
-      default: 0
+      default: 0,
     },
     configEndpoint: {
       type: String,
-      default: DEFAULT_CONFIG_ENDPOINT
+      default: DEFAULT_CONFIG_ENDPOINT,
     },
     websocketUrl: {
       type: String,
-      default: DEFAULT_WEBSOCKET_URL
+      default: DEFAULT_WEBSOCKET_URL,
     },
     primaryColor: {
       type: String,
-      default: null
+      default: null,
     },
     secondaryColor: {
       type: String,
-      default: null
+      default: null,
     },
     widgetTitle: {
       type: String,
-      default: null
+      default: null,
     },
     widgetSubtitle: {
       type: String,
-      default: null
+      default: null,
     },
     welcomeMessage: {
       type: String,
-      default: null
+      default: null,
     },
     title: {
       type: String,
-      default: 'Aparsoft chat widget'
-    }
+      default: 'Aparsoft chat widget',
+    },
   },
 
   data() {
     return {
       handleReady: null,
-      loaderScript: null
+      loaderScript: null,
     };
   },
 
@@ -110,7 +112,7 @@ export default {
     widgetTitle: 'bootstrap',
     widgetSubtitle: 'bootstrap',
     welcomeMessage: 'bootstrap',
-    title: 'bootstrap'
+    title: 'bootstrap',
   },
 
   methods: {
@@ -133,11 +135,14 @@ export default {
         widgetTitle: this.widgetTitle,
         widgetSubtitle: this.widgetSubtitle,
         welcomeMessage: this.welcomeMessage,
-        title: this.title
+        title: this.title,
       };
 
       this.handleReady = (event) => {
-        const controller = (event && event.detail ? event.detail.controller : null) || window.AparsoftChatbot || null;
+        const controller =
+          (event && event.detail ? event.detail.controller : null) ||
+          window.AparsoftChatbot ||
+          null;
         if (controller) {
           this.$emit('ready', controller);
         }
@@ -145,7 +150,9 @@ export default {
 
       window.addEventListener(READY_EVENT, this.handleReady);
 
-      const existingScript = document.querySelector('script[src="' + WIDGET_SCRIPT_URL + '"][data-aparsoft-chatbot]');
+      const existingScript = document.querySelector(
+        'script[src="' + WIDGET_SCRIPT_URL + '"][data-aparsoft-chatbot]',
+      );
       if (existingScript) {
         existingScript.remove();
       }
@@ -185,7 +192,7 @@ export default {
         window.AparsoftChatbot.destroy();
         window.AparsoftChatbot = null;
       }
-    }
-  }
+    },
+  },
 };
 </script>
