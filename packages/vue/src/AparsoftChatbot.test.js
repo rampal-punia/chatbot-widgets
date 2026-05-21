@@ -17,8 +17,7 @@ function applyLoaderDataset(script, config) {
   if (config.position) script.dataset.position = config.position;
   if (typeof config.showBranding === 'boolean')
     script.dataset.showBranding = String(config.showBranding);
-  if (config.autoOpenDelayMs > 0)
-    script.dataset.autoOpenDelayMs = String(config.autoOpenDelayMs);
+  if (config.autoOpenDelayMs > 0) script.dataset.autoOpenDelayMs = String(config.autoOpenDelayMs);
   if (config.configEndpoint) script.dataset.configEndpoint = config.configEndpoint;
   if (config.websocketUrl) script.dataset.websocketUrl = config.websocketUrl;
   if (config.primaryColor) script.dataset.primaryColor = config.primaryColor;
