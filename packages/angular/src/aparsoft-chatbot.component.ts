@@ -39,7 +39,7 @@ export interface AparsoftChatbotInstance {
 
 declare global {
   interface Window {
-    AparsoftChatbot?: AparsoftChatbotInstance | null;
+    AparsoftChatbot: AparsoftChatbotInstance | null | undefined;
   }
 }
 
