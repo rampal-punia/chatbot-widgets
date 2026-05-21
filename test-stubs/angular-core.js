@@ -6,7 +6,9 @@ export function EventEmitter() {
   this.handlers = [];
 }
 EventEmitter.prototype.emit = function (val) {
-  this.handlers.forEach(function (h) { h(val); });
+  this.handlers.forEach(function (h) {
+    h(val);
+  });
 };
 EventEmitter.prototype.subscribe = function (handler) {
   this.handlers.push(handler);
