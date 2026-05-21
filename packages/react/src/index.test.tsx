@@ -39,7 +39,9 @@ describe('AparsoftChatbot (React TSX)', () => {
       }),
     );
 
-    const script = document.querySelector(`script[src="${WIDGET_SCRIPT_URL}"]`) as HTMLScriptElement;
+    const script = document.querySelector(
+      `script[src="${WIDGET_SCRIPT_URL}"]`,
+    ) as HTMLScriptElement;
     expect(script?.dataset.aparsoftChatbot).toBe('true');
     expect(script?.dataset.apiKey).toBe('test-key');
     expect(script?.dataset.position).toBe('bottom-left');
@@ -48,9 +50,7 @@ describe('AparsoftChatbot (React TSX)', () => {
   });
 
   it('returns null (renders nothing)', () => {
-    const { container } = render(
-      React.createElement(AparsoftChatbotTSX, { apiKey: 'test-key' }),
-    );
+    const { container } = render(React.createElement(AparsoftChatbotTSX, { apiKey: 'test-key' }));
     expect(container.firstChild).toBeNull();
   });
 
@@ -62,16 +62,16 @@ describe('AparsoftChatbot (React TSX)', () => {
   });
 
   it('removes existing script before injecting a new one', () => {
-    const { rerender } = render(
-      React.createElement(AparsoftChatbotTSX, { apiKey: 'key-1' }),
-    );
+    const { rerender } = render(React.createElement(AparsoftChatbotTSX, { apiKey: 'key-1' }));
 
     expect(document.querySelectorAll(`script[src="${WIDGET_SCRIPT_URL}"]`).length).toBe(1);
 
     rerender(React.createElement(AparsoftChatbotTSX, { apiKey: 'key-2' }));
 
     expect(document.querySelectorAll(`script[src="${WIDGET_SCRIPT_URL}"]`).length).toBe(1);
-    const script = document.querySelector(`script[src="${WIDGET_SCRIPT_URL}"]`) as HTMLScriptElement;
+    const script = document.querySelector(
+      `script[src="${WIDGET_SCRIPT_URL}"]`,
+    ) as HTMLScriptElement;
     expect(script?.dataset.apiKey).toBe('key-2');
   });
 
@@ -89,9 +89,7 @@ describe('AparsoftChatbot (React TSX)', () => {
   });
 
   it('cleans up script and listener on unmount', () => {
-    const { unmount } = render(
-      React.createElement(AparsoftChatbotTSX, { apiKey: 'test-key' }),
-    );
+    const { unmount } = render(React.createElement(AparsoftChatbotTSX, { apiKey: 'test-key' }));
 
     expect(document.querySelector(`script[src="${WIDGET_SCRIPT_URL}"]`)).not.toBeNull();
 
@@ -147,7 +145,7 @@ describe('useAparsoftChatbot', () => {
 
 // Helper to test hooks
 function renderHook<T>(hook: () => T) {
-  let result: { current: T } = { current: undefined as unknown as T };
+  const result: { current: T } = { current: undefined as unknown as T };
 
   function TestComponent() {
     result.current = hook();
